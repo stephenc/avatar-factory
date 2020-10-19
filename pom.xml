@@ -10,7 +10,7 @@
 
   <groupId>io.github.stephenc.avatar-factory</groupId>
   <artifactId>avatar-factory</artifactId>
-  <version>1.x-SNAPSHOT</version>
+  <version>1.12</version>
 
   <name>Avatar Factory</name>
   <description>Builds SVG Avatars</description>
@@ -38,7 +38,7 @@
     <connection>scm:git:https://github.com/stephenc/avatar-factory.git</connection>
     <developerConnection>scm:git:git@github.com:stephenc/avatar-factory.git</developerConnection>
     <url>http://github.com/stephenc/avatar-factory/tree/master/</url>
-    <tag>HEAD</tag>
+    <tag>avatar-factory-1.12</tag>
   </scm>
   <issueManagement>
     <system>github</system>
