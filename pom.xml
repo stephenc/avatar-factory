@@ -169,7 +169,7 @@
         <configuration>
           <serverId>sonatype-nexus-staging</serverId>
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <stagingProfileId>c3a098f3fdc7d</stagingProfileId>
+<!--          <stagingProfileId>c3a098f3fdc7d</stagingProfileId>-->
         </configuration>
       </plugin>
     </plugins>
