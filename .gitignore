@@ -29,3 +29,5 @@ pom.xml.versionsBackup
 pom.xml.next
 .mvn/timing.properties
 release.properties
+TAG_NAME.txt
+VERSION.txt
