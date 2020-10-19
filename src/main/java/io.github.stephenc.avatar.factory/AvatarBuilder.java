@@ -389,7 +389,7 @@ public class AvatarBuilder {
     }
 
     @NonNull
-    public String build() throws IOException {
+    public String build() {
         StringBuilder components = new StringBuilder();
         if (backgroundColor != null) {
             components.append(render(

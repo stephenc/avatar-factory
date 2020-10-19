@@ -1,6 +1,10 @@
 package io.github.stephenc.avatar.factory;
 
 import com.github.javafaker.Faker;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -42,6 +46,12 @@ class AvatarBuilderTest {
         // mean = 5200, variance = 2496, std deviation ~ 50
         // there is a 30% chance of a normally distributed unbiased generator being more than 1 standard deviation
         // from its mean, which would bring it into the range that is 3 standard deviations from a 2% biased generator
+    }
+
+    //@Test
+    void generate_samples() throws IOException {
+        Files.write(Paths.get("bob.svg"), new AvatarBuilder("Bob").build().getBytes(StandardCharsets.UTF_8));
+        Files.write(Paths.get("alice.svg"), new AvatarBuilder("Alice").build().getBytes(StandardCharsets.UTF_8));
     }
 
 }

@@ -2,4 +2,58 @@
 
 A Java based library for generating Avatars using the templates designed by link:https://github.com/teneresa[Teneresa] for the link:https://github.com/trunda/avatio-avatar/[trunda/avatio-avatar] VueJS avatar component.
 
+== Templates
+
+The original artwork by link:https://github.com/teneresa[Teneresa] has two face templates:
+
+* A thin necked, softer edged face template with matching accessories and unique clothes, can wear lipstick but has no facial hair.
+* A thick necked, squarer chin face template with matching clothes, not expected to wear lipstick, can have facial hair.
+
+This library keeps the original names for these two template sets, i.e. Female and Male respectively, buy only to aid with mirroring the upstream link:https://github.com/trunda/avatio-avatar/[trunda/avatio-avatar] templates.
+
+This library does not enforce picking options from any specific set, however it should be noted that some options do not align well, specifically:
+
+* stubble on a thin neck
+* necklace on a thick neck
+* some clothing items can show torso overflow if used from a non-matching set.
+* etc
+
+TIP: PRs for additional templates to create parity of options between face templates are welcome.
+
+[NOTE]
+--
+There is currently a bias in the total number of matching template combinations as the template with facial hair options can select from approx 1.8e12 combinations whereas the template set without facial hair only selects from 7.4e11 combinations.
+
+Addressing this imbalance would be nice.
+
+The seeded random generation will not pick lipstick for the template that has facial hair only because that would widen the disparity of combinations.
+
+This library does not prevent selecting lipstick for a template that has facial hair.
+--
+
+== Samples
+
+The `AvatarBuilder(String)` constructor will use the supplied name as a seed from which to try and generate a mostly unique avatar... with the property that the same name will always generate the same avatar.
+
+[NOTE]
+--
+As this is a purely random generation based on the SHA-256 of the name. There is a 50:50 chance that your name will not select a neck thickness that you identify as.
+
+The seeded random generation will pick options from the sets that match the selected seeded randomly selected face template.
+
+The intent of this constructor is to use it paired with something like link:https://github.com/DiUS/java-faker[faker], i.e.
+
+[source,java]
+----
+String name = Faker.instance().name().name();
+String avatar = new AvatarBuilder(name).build();
+----
+
+--
+
+.If you use `+new AvatarBuilder("Bob").build()+` you should always get this image
+image::bob.svg[]
+
+.if you use `+new AvatarBuilder("Alice").build()+` you should always get this image
+image::alice.svg[]
 
