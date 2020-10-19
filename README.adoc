@@ -1,0 +1,5 @@
+= Avatar Factory
+
+A Java based library for generating Avatars using the templates designed by link:https://github.com/teneresa[Teneresa] for the link:https://github.com/trunda/avatio-avatar/[trunda/avatio-avatar] VueJS avatar component.
+
+
